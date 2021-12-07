@@ -7,6 +7,42 @@
     <title>Travel App</title>
   </head>
   <body>
-    <h1>Welcome, Travel App</h1>
+    <header>
+      <h1>Travel Planner</h1>
+    </header>
+    <main>
+      <section>
+        <form id="form-input" onsubmit="return Client.handleSubmit(event)">
+          <div class="input-format">
+            <p>City</p>
+            <input
+              id="city"
+              class="input"
+              type="text"
+              name="city"
+              value=""
+              placeholder="Enter city wanting to travel"
+            />
+          </div>
+          <div class="input-format">
+            <p>Date</p>
+            <input
+              id="schedule"
+              type="date"
+              name="date"
+              value=""
+              class="input"
+            />
+          </div>
+          <button onclick="return Client.handleSubmit(event)">Search</button>
+        </form>
+      </section>
+      <section>
+        <div id="results"></div>
+      </section>
+    </main>
+    <footer>
+      <p>Copyrigth @ 2021 by Hikmani Syariful.</p>
+    </footer>
   </body>
 </html>
