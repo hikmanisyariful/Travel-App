@@ -31,12 +31,13 @@ footer {
 #form-input {
   width: 500px;
   height: 300px;
-  border: 3px solid #32a1ce;
+  border: 3px solid burlywood;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 20px;
+  background-color: bisque;
 }
 
 .input-format {
