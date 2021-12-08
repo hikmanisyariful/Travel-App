@@ -4,6 +4,10 @@ function handleSubmit(event) {
   let city = document.getElementById("city").value;
   let date = document.getElementById("schedule").value;
 
+  Client.getApiKey().then(data => {
+    console.log(data);
+  });
+
   const results = document.getElementById("results");
   results.innerHTML = `
     <p>${city}</p>
