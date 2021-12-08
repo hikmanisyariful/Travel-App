@@ -6,7 +6,7 @@ const cors = require("cors");
 const port = 8081;
 
 const store = {
-  apiKey: {
+  apiKeys: {
     keyGeonames: process.env.USER_NAME_GEONAMES_API,
     keyPixabay: process.env.API_KEY_PIXABAY,
     keyWeatherbit: process.env.API_KEY_WEATHERBIT
@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/apiKey", (req, res) => {
-  res.send(store.apiKey);
+  res.send(store.apiKeys);
 });
 
 app.listen(port, () => {
