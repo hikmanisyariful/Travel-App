@@ -11,7 +11,7 @@ function handleSubmit(event) {
       const payload = {
         lat: data.geonames[0].lat,
         lng: data.geonames[0].lng,
-        days: 3
+        days: Client.getDays(date)
       };
       Client.getPredictForecastFromWeatherbitAPI(
         apiKeys.keyWeatherbit,
@@ -20,7 +20,7 @@ function handleSubmit(event) {
         forecast = data[data.length - 1];
         Client.getCityImageFromPixabayAPI(apiKeys.keyPixabay, city).then(
           data => {
-            imageData = data;
+            imageData = Client.getPicturesByCity(data.hits, city);
             console.log("forecast :", forecast, "||||", "Image :", imageData);
           }
         );

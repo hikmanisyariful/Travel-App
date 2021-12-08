@@ -6,11 +6,14 @@ import {
   getPredictForecastFromWeatherbitAPI,
   getCityImageFromPixabayAPI
 } from "../client/js/app.js";
+import { getDays, getPicturesByCity } from "../client/js/helper.js";
 
 export {
   handleSubmit,
   getApiKey,
   getLatLongFromGeonamesAPI,
   getPredictForecastFromWeatherbitAPI,
-  getCityImageFromPixabayAPI
+  getCityImageFromPixabayAPI,
+  getDays,
+  getPicturesByCity
 };
