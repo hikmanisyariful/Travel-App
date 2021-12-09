@@ -8,7 +8,11 @@ const getDays = date => {
 
 const getPicturesByCity = (data, city) => {
   const pictures = data.reduce((acc, curr) => {
-    curr.tags.includes(city.toLowerCase()) && acc.push(curr.webformatURL);
+    if (curr.tags.includes(city.toLowerCase())) {
+      if (curr.webformatWidth > curr.webformatHeight) {
+        acc.push(curr);
+      }
+    }
     return acc;
   }, []);
   return pictures;

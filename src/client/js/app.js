@@ -29,7 +29,10 @@ const getCityImageFromPixabayAPI = async (apiKey, city) => {
   return json;
 };
 
+const app = () => {};
+
 export {
+  app,
   getApiKey,
   getLatLongFromGeonamesAPI,
   getPredictForecastFromWeatherbitAPI,

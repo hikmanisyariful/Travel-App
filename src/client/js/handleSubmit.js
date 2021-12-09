@@ -4,7 +4,7 @@ function handleSubmit(event) {
   let city = document.getElementById("city").value;
   let date = document.getElementById("schedule").value;
   let forecast;
-  let imageData;
+  let pictures;
 
   Client.getApiKey().then(apiKeys => {
     Client.getLatLongFromGeonamesAPI(apiKeys.keyGeonames, city).then(data => {
@@ -20,19 +20,14 @@ function handleSubmit(event) {
         forecast = data[data.length - 1];
         Client.getCityImageFromPixabayAPI(apiKeys.keyPixabay, city).then(
           data => {
-            imageData = Client.getPicturesByCity(data.hits, city);
-            console.log("forecast :", forecast, "||||", "Image :", imageData);
+            pictures = Client.getPicturesByCity(data.hits, city);
+            // console.log("forecast :", forecast, "||||", "Image :", imageData);
+            Client.renderResultsUI({ forecast, pictures, city, date });
           }
         );
       });
     });
   });
-
-  const results = document.getElementById("results");
-  results.innerHTML = `
-    <p>${city}</p>
-    <p>${date}</p>
-  `;
 
   document.getElementById("city").value = "";
   document.getElementById("schedule").value = "";
