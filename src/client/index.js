@@ -1,15 +1,15 @@
 import "./styles/styles.scss";
 import { handleSubmit } from "../client/js/handleSubmit.js";
 import {
-  app,
   getApiKey,
   getLatLongFromGeonamesAPI,
   getPredictForecastFromWeatherbitAPI,
   getCityImageFromPixabayAPI
-} from "../client/js/app.js";
+} from "../client/js/fetchApi.js";
 import { getDays, getPicturesByCity } from "../client/js/helper.js";
 import { renderResultsUI } from "../client/js/renderResultsUI";
 import { navigation } from "../client/js/navigation";
+import { app } from "../client/js/app";
 
 app();
 
