@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  font-family: "Montserrat", sans-serif;
 }
 
 header {
@@ -7,11 +8,24 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: cadetblue;
-  padding: 20px 20px;
+  padding: 20px 50px;
+
+  button {
+    display: none;
+    cursor: pointer;
+    background-color: aquamarine;
+    padding: 10px;
+  }
+
+  button:hover {
+    background-color: darkcyan;
+  }
 }
 
 main {
-  background-color: paleturquoise;
+  // background-color: paleturquoise;
+  background-image: url("../assets/background.jpg");
+  background-size: cover;
   min-height: 650px;
   display: flex;
   flex-direction: column;
@@ -31,14 +45,24 @@ footer {
 #form-input {
   width: 500px;
   height: 300px;
-  border: 3px solid darkslategrey;
+  border: 2px solid darkslategrey;
   border-radius: 10px;
   display: flex;
   // display: none;
   flex-direction: column;
   justify-content: center;
   padding: 20px;
-  background-color: rgba(111, 255, 223, 0.5);
+  background-color: rgba(111, 255, 223, 0.8);
+
+  button {
+    height: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: darkcyan;
+  }
 }
 
 .input-format {
@@ -48,16 +72,13 @@ footer {
 
   p {
     margin-bottom: 10px;
+    font-size: 1.2em;
+    font-weight: 600;
   }
 }
 
 .input {
   height: 30px;
-}
-
-button {
-  height: 30px;
-  margin-top: 20px;
 }
 
 // Results
@@ -70,7 +91,7 @@ button {
 }
 
 .card {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
   border: 3px solid darkslategrey;
   border-radius: 15px;
   display: flex;
