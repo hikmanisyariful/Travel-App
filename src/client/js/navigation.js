@@ -1,5 +1,4 @@
 const navigation = route => {
-  console.log(route);
   const form = document.getElementById("form-input");
   const results = document.getElementById("results");
   const toForm = document.getElementById("to-form");

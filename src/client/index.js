@@ -6,7 +6,11 @@ import {
   getPredictForecastFromWeatherbitAPI,
   getCityImageFromPixabayAPI
 } from "../client/js/fetchApi.js";
-import { getDays, getPicturesByCity } from "../client/js/helper.js";
+import {
+  getDays,
+  getPicturesByCity,
+  validationEmptyInput
+} from "../client/js/helper.js";
 import { renderResultsUI } from "../client/js/renderResultsUI";
 import { navigation } from "../client/js/navigation";
 import { app } from "../client/js/app";
@@ -23,5 +27,6 @@ export {
   getDays,
   getPicturesByCity,
   renderResultsUI,
-  navigation
+  navigation,
+  validationEmptyInput
 };

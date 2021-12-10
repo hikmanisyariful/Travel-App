@@ -18,4 +18,13 @@ const getPicturesByCity = (data, city) => {
   return pictures;
 };
 
-export { getDays, getPicturesByCity };
+const validationEmptyInput = (city, date) => {
+  if ((city === "" && date === "") || city === "" || date === "") {
+    alert("Please provided a city name and a travel date");
+    return true;
+  } else {
+    return false;
+  }
+};
+
+export { getDays, getPicturesByCity, validationEmptyInput };
