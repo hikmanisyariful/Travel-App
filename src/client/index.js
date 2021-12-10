@@ -1,4 +1,11 @@
+// Import Styles
 import "./styles/styles.scss";
+import "./styles/header.scss";
+import "./styles/form.scss";
+import "./styles/results.scss";
+import "./styles/footer.scss";
+
+// Import JS
 import { handleSubmit } from "../client/js/handleSubmit.js";
 import {
   getApiKey,
@@ -9,7 +16,8 @@ import {
 import {
   getDays,
   getPicturesByCity,
-  validationEmptyInput
+  validationEmptyInput,
+  printDate
 } from "../client/js/helper.js";
 import { renderResultsUI } from "../client/js/renderResultsUI";
 import { navigation } from "../client/js/navigation";
@@ -28,5 +36,6 @@ export {
   getPicturesByCity,
   renderResultsUI,
   navigation,
-  validationEmptyInput
+  validationEmptyInput,
+  printDate
 };

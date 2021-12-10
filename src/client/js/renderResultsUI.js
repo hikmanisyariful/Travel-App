@@ -1,7 +1,7 @@
 const renderResultsUI = data => {
   Client.navigation("results");
   const { forecast, pictures, city, date } = data;
-  console.log(forecast, pictures, city, date);
+  const newFormatDate = Client.printDate(date);
   const results = document.getElementById("results");
   results.innerHTML = `
   <div class="card">
@@ -14,7 +14,7 @@ const renderResultsUI = data => {
     </div>
     <div class="info">
       <h1>My trip to : ${city.toUpperCase()}</h1>
-      <h3>Departing: ${date}</h3>
+      <h3>Departing: ${newFormatDate}</h3>
       <p>Typical weather for then is:</p>
       <h4>High temperature: ${forecast.max_temp} °C</h4>
       <h4>Low temperature: ${forecast.low_temp} °C</h4>

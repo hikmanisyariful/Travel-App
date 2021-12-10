@@ -3,6 +3,7 @@ const navigation = route => {
   const results = document.getElementById("results");
   const toForm = document.getElementById("to-form");
 
+  // Conditional to show and hide element
   if (route === "results") {
     form.style.display = "none";
     results.style.display = "flex";
