@@ -9,9 +9,6 @@ const navigation = route => {
   } else if (route === "form") {
     form.style.display = "flex";
     results.style.display = "none";
-  } else if (route === "collection") {
-    form.style.display = "none";
-    results.style.display = "none";
   }
 };
 
