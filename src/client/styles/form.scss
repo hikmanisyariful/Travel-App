@@ -37,3 +37,10 @@
 .input {
   height: 30px;
 }
+
+@media (max-width: 600px) {
+  #form-input {
+    width: 300px;
+    height: 300px;
+  }
+}

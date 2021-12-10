@@ -5,14 +5,14 @@ const renderResultsUI = data => {
   const results = document.getElementById("results");
   results.innerHTML = `
   <div class="card">
-    <div class="picture">
+    <div id="pic" class="picture">
       <div class="img-wrap">
         <img
           src="${pictures[pictures.length - 1].webformatURL}"
         />
       </div>
     </div>
-    <div class="info">
+    <div id="info" class="info">
       <h1>My trip to : ${city.toUpperCase()}</h1>
       <h3>Departing: ${newFormatDate}</h3>
       <p>Typical weather for then is:</p>
