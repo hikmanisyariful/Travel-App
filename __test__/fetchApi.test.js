@@ -33,6 +33,7 @@ describe("GET Lat and Lng from Geonames API", () => {
       `http://api.geonames.org/searchJSON?style=SHORT&username=${apiKey}&maxRows=1&q=${city}`
     );
     const json = await response.json();
+    expect(json).toHaveProperty("geonames");
     const geonames = json.geonames[0];
     expect(geonames).toHaveProperty("lat");
     expect(geonames).toHaveProperty("lng");

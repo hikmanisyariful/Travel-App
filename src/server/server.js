@@ -28,6 +28,10 @@ app.get("/apiKey", (req, res) => {
   res.send(store.apiKeys);
 });
 
+app.get("/test", function(req, res) {
+  res.status(200).send("Hello World");
+});
+
 app.listen(port, () => {
   console.log("Listening on port: ", port);
 });
