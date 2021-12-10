@@ -12,27 +12,39 @@ function handleSubmit(event) {
     Client.getApiKey().then(apiKeys => {
       // Fetch API from Geonames API
       Client.getLatLongFromGeonamesAPI(apiKeys.keyGeonames, city).then(data => {
-        const payload = {
-          lat: data.geonames[0].lat,
-          lng: data.geonames[0].lng,
-          days: Client.getDays(date)
-        };
+        if (Client.isNotFoundLatLng(data)) {
+          Client.render404();
+        } else {
+          const payload = {
+            lat: data.geonames[0].lat,
+            lng: data.geonames[0].lng,
+            days: Client.getDays(date)
+          };
 
-        // Fetch API from Weatherbit API
-        Client.getPredictForecastFromWeatherbitAPI(
-          apiKeys.keyWeatherbit,
-          payload
-        ).then(({ data }) => {
-          forecast = data[data.length - 1];
+          // Fetch API from Weatherbit API
+          Client.getPredictForecastFromWeatherbitAPI(
+            apiKeys.keyWeatherbit,
+            payload
+          ).then(({ data }) => {
+            forecast = data[data.length - 1];
 
-          // Fetch API from Pixabay API
-          Client.getCityImageFromPixabayAPI(apiKeys.keyPixabay, city).then(
-            data => {
-              pictures = Client.getPicturesByCity(data.hits, city);
-              Client.renderResultsUI({ forecast, pictures, city, date });
-            }
-          );
-        });
+            // Fetch API from Pixabay API
+            Client.getCityImageFromPixabayAPI(apiKeys.keyPixabay, city).then(
+              data => {
+                if (Client.isNotFoundPicture(data)) {
+                  Client.render404();
+                } else {
+                  pictures = Client.getPicturesByCity(data.hits, city);
+                  if (pictures.length === 0) {
+                    Client.render404();
+                  } else {
+                    Client.renderResultsUI({ forecast, pictures, city, date });
+                  }
+                }
+              }
+            );
+          });
+        }
       });
     });
   }

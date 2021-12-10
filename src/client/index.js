@@ -6,6 +6,7 @@ import "./styles/results.scss";
 import "./styles/footer.scss";
 
 // Import JS
+import { app } from "../client/js/app";
 import { handleSubmit } from "../client/js/handleSubmit.js";
 import {
   getApiKey,
@@ -21,7 +22,8 @@ import {
 } from "../client/js/helper.js";
 import { renderResultsUI } from "../client/js/renderResultsUI";
 import { navigation } from "../client/js/navigation";
-import { app } from "../client/js/app";
+import { isNotFoundLatLng, isNotFoundPicture } from "../client/js/isNotFound";
+import { render404 } from "../client/js/render404";
 
 app();
 
@@ -37,5 +39,8 @@ export {
   renderResultsUI,
   navigation,
   validationEmptyInput,
-  printDate
+  printDate,
+  isNotFoundLatLng,
+  isNotFoundPicture,
+  render404
 };
