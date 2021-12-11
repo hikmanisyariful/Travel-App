@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const port = 3000;
+const port = 8080;
 
 const store = {
   apiKeys: {

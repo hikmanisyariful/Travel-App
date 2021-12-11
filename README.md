@@ -6,6 +6,12 @@ Build a travel app using webpack to run on development and production mode. This
 
 ## Instructions
 
+The first time to install Depedencies
+
+```
+npm install
+```
+
 To run development environment
 
 ```
