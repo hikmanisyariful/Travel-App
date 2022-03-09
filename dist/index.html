@@ -1,0 +1,7 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta http-equiv="X-UA-Compatible" content="ie=edge"/><title>Travel App</title><script defer="defer" src="main.js"></script><link href="main.css" rel="stylesheet"></head><body><header><h1>Travel Planner</h1><button id="to-form">Search Trip</button></header><main><section><form id="form-input"><div class="input-format"><p>City</p><input id="city" class="input" name="city" value="" placeholder="Enter city wanting to travel"/></div><div class="input-format"><p>Date</p><input id="schedule" type="date" name="date" value="" class="input"/></div><button id="search-btn">Search</button></form></section><section><div id="results"></div></section></main><footer><p>Copyrigth @ 2021 by Hikmani Syariful.</p></footer><script>// Check that service workers are supported
+      if ("serviceWorker" in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js");
+        });
+      }</script></body></html>
