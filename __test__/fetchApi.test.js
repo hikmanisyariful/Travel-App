@@ -2,29 +2,6 @@ require("dotenv").config();
 import fetch from "cross-fetch";
 import regeneratorRuntime from "regenerator-runtime";
 
-describe("GET API KEY", () => {
-  test("It should have USER_NAME_GEONAMES_API", async () => {
-    const response = await fetch("http://localhost:8081/apiKey");
-    const json = await response.json();
-    const userNameAPI = json.keyGeonames;
-    expect(userNameAPI).toBe(process.env.USER_NAME_GEONAMES_API);
-  });
-
-  test("It should have API_KEY_WEATHERBIT", async () => {
-    const response = await fetch("http://localhost:8081/apiKey");
-    const json = await response.json();
-    const apiKey = json.keyWeatherbit;
-    expect(apiKey).toBe(process.env.API_KEY_WEATHERBIT);
-  });
-
-  test("It should have API_KEY_PIXABAY", async () => {
-    const response = await fetch("http://localhost:8081/apiKey");
-    const json = await response.json();
-    const apiKey = json.keyPixabay;
-    expect(apiKey).toBe(process.env.API_KEY_PIXABAY);
-  });
-});
-
 describe("GET Lat and Lng from Geonames API", () => {
   test("It should return data which include lat and lng", async () => {
     const apiKey = process.env.USER_NAME_GEONAMES_API;

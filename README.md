@@ -12,6 +12,14 @@ The first time to install Depedencies
 npm install
 ```
 
+Create .env file contains api key
+
+```
+USER_NAME_GEONAMES_API=
+API_KEY_PIXABAY=
+API_KEY_WEATHERBIT=
+```
+
 To run development environment
 
 ```
